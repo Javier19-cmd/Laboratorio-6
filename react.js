@@ -1,5 +1,6 @@
 //Grid del juego.
-const SCREEN_SIZE = 1080;
+const SCREEN_SIZE = 1865;
+const SCREEN_HEIGHT = 945;
 const ELEMENT_SIZE = 200;
 
 /*
@@ -36,53 +37,53 @@ const Card = ({ x, y }) => {
   }
 
   return (
-    <img src='./Enemy.gif' style={style} />
+    <img src='./A.png' style={style} />
   )
 }
 
 //Matriz de la primera fila de cartas.
 const fila1 = [{
   x: 100,
-  y: 100,
+  y: 50,
 }, {
-  x: 300,
-  y: 100,
-}, {
-  x: 500,
-  y: 100,
+  x: 400,
+  y: 50,
 }, {
   x: 700,
-  y: 100,
+  y: 50,
+}, {
+  x: 1000,
+  y: 50,
 }]
 
 //Matriz de la segunda fila de cartas.
 const fila2 = [{
     x: 100,
-    y: 300,
+    y: 350,
   }, {
-    x: 300,
-    y: 300,
+    x: 400,
+    y: 350,
   }, {
-    x: 500,
-    y: 300,
+    x: 700,
+    y: 350,
 }, {
-  x: 700,
-  y: 300,
+  x: 1000,
+  y: 350,
 }]
 
 //Matriz de la tercera fila de cartas.
 const fila3 =[{
     x: 100,
-    y: 500,
+    y: 650,
   }, {
-    x: 300,
-    y: 500,
+    x: 400,
+    y: 650,
   }, {
-    x: 500,
-    y: 500,
+    x: 700,
+    y: 650,
 }, {
-  x: 700,
-  y: 500,
+  x: 1000,
+  y: 650,
 }]
 
 //Método app. Este el método principal.
@@ -95,7 +96,7 @@ const App = () => {
         //Estilo de la app.
         const style = {
                 width: `${SCREEN_SIZE}px`,
-                height: `${SCREEN_SIZE}px`,
+                height: `${SCREEN_HEIGHT}px`,
                 background: 'pink',
                 position: 'relative'
             }
