@@ -37,7 +37,7 @@ const Card = ({ x, y }) => {
   }
 
   return (
-    <img src='./A.png' style={style} />
+    <img src='./uno.png' style={style} />
   )
 }
 
