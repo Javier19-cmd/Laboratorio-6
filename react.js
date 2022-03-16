@@ -58,56 +58,63 @@ const fila1 = [{
 
 //Matriz de la segunda fila de cartas.
 const fila2 = [{
-    x: 100,
-    y: 350,
-  }, {
-    x: 400,
-    y: 350,
-  }, {
-    x: 700,
-    y: 350,
-}, {
-  x: 1000,
+  x: 100,
   y: 350,
+}, {
+  x: 400,
+  y: 350,
+}, {
+  x: 700,
+  y: 350,
+}, {
+x: 1000,
+y: 350,
 }]
 
 //Matriz de la tercera fila de cartas.
 const fila3 =[{
-    x: 100,
-    y: 650,
-  }, {
-    x: 400,
-    y: 650,
-  }, {
-    x: 700,
-    y: 650,
-}, {
-  x: 1000,
+  x: 100,
   y: 650,
+}, {
+  x: 400,
+  y: 650,
+}, {
+  x: 700,
+  y: 650,
+}, {
+x: 1000,
+y: 650,
 }]
 
 //Método app. Este el método principal.
 const App = () => {
 
-        const [cards, setCards] = React.useState(fila1) //Matriz de la primera fila de cartas.
-        const [cards2, setCards2] = React.useState(fila2) //Matriz de la segunda fila de cartas.
-        const [cards3, setCards3] = React.useState(fila3) //Matriz de la tercera fila de cartas.
+  const [cards, setCards] = React.useState(fila1) //Matriz de la primera fila de cartas.
+  const [cards2, setCards2] = React.useState(fila2) //Matriz de la segunda fila de cartas.
+  const [cards3, setCards3] = React.useState(fila3) //Matriz de la tercera fila de cartas.
 
-        //Estilo de la app.
-        const style = {
-                width: `${SCREEN_SIZE}px`,
-                height: `${SCREEN_HEIGHT}px`,
-                background: 'linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)',
-                position: 'relative'
-            }
-            //Se están mapenado las tres filas de las cartas.
-        return (
-          <div style = { style }>
-           {cards.map((card) => <Card key={`${card.x}-${card.y}`} {...card} />)}
-           {cards2.map((car) => <Card key={`${car.x}-${car.y}`} {...car} />)}
-           {cards3.map((ca) => <Card key={`${ca.x}-${ca.y}`} {...ca} />)}
-          </div>
-        )
+  const hola = (e) => {
+    if(e.key === 'ArrowRight'){
+      setCards((oldPos) => ((oldPos + 10) % (SCREEN_SIZE - ELEMENT_SIZE)))
+    }
+  }
+
+  //Estilo de la app.
+  const style = {
+    width: `${SCREEN_SIZE}px`,
+    height: `${SCREEN_HEIGHT}px`,
+    background: 'linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)',
+    position: 'relative'
+}
+
+  //Se están mapenado las tres filas de las cartas.
+  return (
+    <div style = { style }>
+     {cards.map((card) => <Card key={`${card.x}-${card.y}`} {...card} />)}
+     {cards2.map((car) => <Card key={`${car.x}-${car.y}`} {...car} />)}
+     {cards3.map((ca) => <Card key={`${ca.x}-${ca.y}`} {...ca} />)}
+    </div>
+  )
 }
 //Renderizando al método principal.
 ReactDOM.render(
