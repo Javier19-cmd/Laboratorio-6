@@ -62,12 +62,12 @@ const N2 = () => {
     width: `${ELEMENT_SIZE}px`,
     height: `${ELEMENT_SIZE}px`,
     position: 'absolute',
-    left: `100px`,
+    left: `400px`,
     top: `50px`
   }
 
   return (
-    <img src='./1.png' style={style} />
+    <img src='./2.png' style={style} />
   )
 }
 
@@ -143,7 +143,8 @@ const App = () => {
      {cards.map((card) => <Card key={`${card.x}-${card.y}`} {...card} />)}
      {cards2.map((car) => <Card key={`${car.x}-${car.y}`} {...car} />)}
      {cards3.map((ca) => <Card key={`${ca.x}-${ca.y}`} {...ca} />)}
-
+     <N1/>
+     <N2/>
     </div>
   )
 }
