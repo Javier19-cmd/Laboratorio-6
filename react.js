@@ -162,7 +162,7 @@ const N7 = () => {
   )
 }
 
-//Método que se encarga del diseño de la sexta carta con número 5.
+//Método que se encarga del diseño de la sexta carta con número 3.
 const N8 = () => {
   //Diseño del número.
   const style = {
@@ -178,6 +178,75 @@ const N8 = () => {
     <img src='./3.png' style={style} />
   )
 }
+
+//Método que se encarga del diseño de la sexta carta con número 4.
+const N9 = () => {
+  //Diseño del número.
+  const style = {
+    width: `${ELEMENT_SIZE}px`,
+    height: `${ELEMENT_SIZE}px`,
+    position: 'absolute',
+    left: `100px`,
+    top: `650px`
+  }
+
+  //Retorno de la imagen de la carta.
+  return (
+    <img src='./4.png' style={style} />
+  )
+}
+
+//Método que se encarga del diseño de la sexta carta con número 8.
+const N10 = () => {
+  //Diseño del número.
+  const style = {
+    width: `${ELEMENT_SIZE}px`,
+    height: `${ELEMENT_SIZE}px`,
+    position: 'absolute',
+    left: `400px`,
+    top: `650px`
+  }
+
+  //Retorno de la imagen de la carta.
+  return (
+    <img src='./8.png' style={style} />
+  )
+}
+
+//Método que se encarga del diseño de la sexta carta con número 9.
+const N11 = () => {
+  //Diseño del número.
+  const style = {
+    width: `${ELEMENT_SIZE}px`,
+    height: `${ELEMENT_SIZE}px`,
+    position: 'absolute',
+    left: `700px`,
+    top: `650px`
+  }
+
+  //Retorno de la imagen de la carta.
+  return (
+    <img src='./9.png' style={style} />
+  )
+}
+
+//Método que se encarga del diseño de la sexta carta con número 12.
+const N12 = () => {
+  //Diseño del número.
+  const style = {
+    width: `${ELEMENT_SIZE}px`,
+    height: `${ELEMENT_SIZE}px`,
+    position: 'absolute',
+    left: `1000px`,
+    top: `650px`
+  }
+
+  //Retorno de la imagen de la carta.
+  return (
+    <img src='./8.png' style={style} />
+  )
+}
+
 
 //Matriz de la primera fila de cartas.
 const fila1 = [{
@@ -259,6 +328,10 @@ const App = () => {
      <N6/>
      <N7/>
      <N8/>
+     <N9/>
+     <N10/>
+     <N11/>
+     <N12/>
     </div>
   )
 }
