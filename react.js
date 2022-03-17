@@ -41,6 +41,8 @@ const Card = ({ x, y }) => {
   )
 }
 
+//Fila 1
+
 //Método que se encarga del diseño de la primera carta con número 1.
 const N1 = () => {
   const style = {
@@ -74,7 +76,7 @@ const N2 = () => {
   )
 }
 
-//Método que se encarga del diseño de la segunda carta con número 2.
+//Método que se encarga del diseño de la segunda carta con número 3.
 const N3 = () => {
   //Diseño del número.
   const style = {
@@ -91,7 +93,7 @@ const N3 = () => {
   )
 }
 
-//Método que se encarga del diseño de la segunda carta con número 2.
+//Método que se encarga del diseño de la segunda carta con número 4.
 const N4 = () => {
   //Diseño del número.
   const style = {
@@ -105,6 +107,75 @@ const N4 = () => {
   //Retorno de la imagen de la carta.
   return (
     <img src='./4.png' style={style} />
+  )
+}
+
+//Fila 2.
+//Método que se encarga del diseño de la quinta carta con número 5.
+const N5 = () => {
+  //Diseño del número.
+  const style = {
+    width: `${ELEMENT_SIZE}px`,
+    height: `${ELEMENT_SIZE}px`,
+    position: 'absolute',
+    left: `100px`,
+    top: `350px`
+  }
+
+  //Retorno de la imagen de la carta.
+  return (
+    <img src='./5.png' style={style} />
+  )
+}
+
+//Método que se encarga del diseño de la sexta carta con número 1.
+const N6 = () => {
+  //Diseño del número.
+  const style = {
+    width: `${ELEMENT_SIZE}px`,
+    height: `${ELEMENT_SIZE}px`,
+    position: 'absolute',
+    left: `400px`,
+    top: `350px`
+  }
+
+  //Retorno de la imagen de la carta.
+  return (
+    <img src='./1.png' style={style} />
+  )
+}
+
+//Método que se encarga del diseño de la sexta carta con número 5.
+const N7 = () => {
+  //Diseño del número.
+  const style = {
+    width: `${ELEMENT_SIZE}px`,
+    height: `${ELEMENT_SIZE}px`,
+    position: 'absolute',
+    left: `700px`,
+    top: `350px`
+  }
+
+  //Retorno de la imagen de la carta.
+  return (
+    <img src='./5.png' style={style} />
+  )
+}
+
+//Método que se encarga del diseño de la sexta carta con número 5.
+const N8 = () => {
+  //Diseño del número.
+  const style = {
+    width: `${ELEMENT_SIZE}px`,
+    height: `${ELEMENT_SIZE}px`,
+    position: 'absolute',
+    left: `1000px`,
+    top: `350px`
+  }
+
+  //Retorno de la imagen de la carta.
+  return (
+    <img src='./3.png' style={style} />
   )
 }
 
@@ -184,6 +255,10 @@ const App = () => {
      <N2/>
      <N3/>
      <N4/>
+     <N5/>
+     <N6/>
+     <N7/>
+     <N8/>
     </div>
   )
 }
