@@ -230,7 +230,7 @@ const N11 = () => {
   )
 }
 
-//Método que se encarga del diseño de la sexta carta con número 12.
+//Método que se encarga del diseño de la sexta carta con número 8.
 const N12 = () => {
   //Diseño del número.
   const style = {
@@ -293,6 +293,9 @@ x: 1000,
 y: 650,
 }]
 
+
+
+
 //Método app. Este el método principal.
 const App = () => {
 
@@ -332,6 +335,7 @@ const App = () => {
      <N10/>
      <N11/>
      <N12/>
+     <p>Hola</p>
     </div>
   )
 }
