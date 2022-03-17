@@ -41,6 +41,21 @@ const Card = ({ x, y }) => {
   )
 }
 
+//Método que se encarga del diseño de la primera carta.
+const N1 = () => {
+  const style = {
+    width: `${ELEMENT_SIZE}px`,
+    height: `${ELEMENT_SIZE}px`,
+    position: 'absolute',
+    left: `100px`,
+    top: `50px`
+  }
+
+  return (
+    <img src='./1.png' style={style} />
+  )
+}
+
 //Matriz de la primera fila de cartas.
 const fila1 = [{
   x: 100,
