@@ -41,8 +41,23 @@ const Card = ({ x, y }) => {
   )
 }
 
-//Método que se encarga del diseño de la primera carta.
+//Método que se encarga del diseño de la primera carta con número 1.
 const N1 = () => {
+  const style = {
+    width: `${ELEMENT_SIZE}px`,
+    height: `${ELEMENT_SIZE}px`,
+    position: 'absolute',
+    left: `100px`,
+    top: `50px`
+  }
+
+  return (
+    <img src='./1.png' style={style} />
+  )
+}
+
+//Método que se encarga del diseño de la segunda carta con número 2.
+const N2 = () => {
   const style = {
     width: `${ELEMENT_SIZE}px`,
     height: `${ELEMENT_SIZE}px`,
@@ -128,6 +143,7 @@ const App = () => {
      {cards.map((card) => <Card key={`${card.x}-${card.y}`} {...card} />)}
      {cards2.map((car) => <Card key={`${car.x}-${car.y}`} {...car} />)}
      {cards3.map((ca) => <Card key={`${ca.x}-${ca.y}`} {...ca} />)}
+
     </div>
   )
 }
