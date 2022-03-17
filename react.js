@@ -44,13 +44,14 @@ const Card = ({ x, y }) => {
 //Método que se encarga del diseño de la primera carta con número 1.
 const N1 = () => {
   const style = {
+    //Diseño del número.
     width: `${ELEMENT_SIZE}px`,
     height: `${ELEMENT_SIZE}px`,
     position: 'absolute',
     left: `100px`,
     top: `50px`
   }
-
+  //Retorno de la imagen de la carta.
   return (
     <img src='./1.png' style={style} />
   )
@@ -58,6 +59,7 @@ const N1 = () => {
 
 //Método que se encarga del diseño de la segunda carta con número 2.
 const N2 = () => {
+  //Diseño del número.
   const style = {
     width: `${ELEMENT_SIZE}px`,
     height: `${ELEMENT_SIZE}px`,
@@ -66,8 +68,43 @@ const N2 = () => {
     top: `50px`
   }
 
+  //Retorno de la imagen de la carta.
   return (
     <img src='./2.png' style={style} />
+  )
+}
+
+//Método que se encarga del diseño de la segunda carta con número 2.
+const N3 = () => {
+  //Diseño del número.
+  const style = {
+    width: `${ELEMENT_SIZE}px`,
+    height: `${ELEMENT_SIZE}px`,
+    position: 'absolute',
+    left: `700px`,
+    top: `50px`
+  }
+
+  //Retorno de la imagen de la carta.
+  return (
+    <img src='./3.png' style={style} />
+  )
+}
+
+//Método que se encarga del diseño de la segunda carta con número 2.
+const N4 = () => {
+  //Diseño del número.
+  const style = {
+    width: `${ELEMENT_SIZE}px`,
+    height: `${ELEMENT_SIZE}px`,
+    position: 'absolute',
+    left: `1000px`,
+    top: `50px`
+  }
+
+  //Retorno de la imagen de la carta.
+  return (
+    <img src='./4.png' style={style} />
   )
 }
 
@@ -145,6 +182,8 @@ const App = () => {
      {cards3.map((ca) => <Card key={`${ca.x}-${ca.y}`} {...ca} />)}
      <N1/>
      <N2/>
+     <N3/>
+     <N4/>
     </div>
   )
 }
