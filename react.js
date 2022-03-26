@@ -6,16 +6,10 @@ const ELEMENT_SIZE = 200;
 //Cartas que se usarán para la memoria.
 //Las cartas empiezan teniendo el match en false para hacer bien la comparación.
 const cartas = [
-    { "img": "/img/1.png", matched: false },
-    { "img": "/img/2.png", matched: false },
-    { "img": "/img/3.png", matched: false },
-    { "img": "/img/4.png", matched: false },
-    { "img": "/img/5.png", matched: false },
-    { "img": "/img/6.png", matched: false },
-    { "img": "/img/7.png", matched: false },
-    { "img": "/img/8.png", matched: false },
-    { "img": "/img/9.png", matched: false },
-    { "img": "/img/10.png", matched: false }
+    { "Laboratorio-6": "./1.png", matched: false },
+    { "Laboratorio-6": "./2.png", matched: false },
+    { "Laboratorio-6": "./3.png", matched: false }
+
 ]
 
 
@@ -34,7 +28,7 @@ function Cartas({carta, hEleccion, flipped, deshabilitados}){
       <div className={flipped ? "flipped" : ""}> {/*Si en caso la carta está volteada, entonces se aplica la clase flipped. Si no lo está, entonces se manda un string vacío*/}
         <img className="frente" src={carta.src} alt="Frente"/> {/*Esta es una imagen dinámica de las cartas que tienen números*/}
         <img className="trasero"
-        src="/img/atras.png"
+        src="./atras.png"
         onClick={handleClick}
         alt="Trasero"
         /> {/*Esta es la imagen de la parte trasera de todas las cartas. Tiene diseño de yu gi oh y es la que tiene opción para que se volteen las cartas*/}
