@@ -1,313 +1,132 @@
 //Grid del juego.
 const SCREEN_SIZE = 1865;
-const SCREEN_HEIGHT = 945;
+const SCREEN_HEIGHT = 1865;
 const ELEMENT_SIZE = 200;
 
-/*
-//Método para las propiedades del jugador.
-//En este método se recibe la posición en x del jugador.
-const Player = ({ x }) => {
+//Cartas que se usarán para la memoria.
+//Las cartas empiezan teniendo el match en false para hacer bien la comparación.
+const cartas = [
+    { "img": "/img/1.png", matched: false },
+    { "img": "/img/2.png", matched: false },
+    { "img": "/img/3.png", matched: false },
+    { "img": "/img/4.png", matched: false },
+    { "img": "/img/5.png", matched: false },
+    { "img": "/img/6.png", matched: false },
+    { "img": "/img/7.png", matched: false },
+    { "img": "/img/8.png", matched: false },
+    { "img": "/img/9.png", matched: false },
+    { "img": "/img/10.png", matched: false }
+]
 
-    //Css del jugador.
-    const style = {
-        width: `${ELEMENT_SIZE}px`, //Ancho del jugador.
-        height: `${ELEMENT_SIZE}px`, //Alto del jugador.
-        background: 'red', //Color del jugador.
-        position: 'absolute',
-        left: `${x}px`, //El padre dice donde está el jugador.
-        bottom: `0px` //El bottom está quemado.
+
+function Cartas({carta, hEleccion, flipped, deshabilitados}){
+  const handleClick = () => {
+    //Aquí se actualizarán ciertos estados de las cartas.
+    if(!deshabilitados){
+       //Si en caso no se ha deshabilitado ninguna carta, entonces se puede hacer una elección en el tablero.
+        hEleccion(carta) //Pasando la elección desde la App.
     }
 
-    //Retorno del estilo.
-    return ( <div style = { style }/>
-    )
-}
-*/
-
-//Método para las propiedades de las cartas.
-//En este método se reciben las posiciones "x" y "y" de las cartas.
-const Card = ({ x, y }) => {
-  //Estilo de la carta.
-  const style = {
-    width: `${ELEMENT_SIZE}px`,
-    height: `${ELEMENT_SIZE}px`,
-    position: 'absolute',
-    left: `${x}px`,
-    top: `${y}px`
   }
 
-  return (
-    <img src='./uno.png' style={style} />
+  return(
+    <div className="carta"> {/*Daándole un id a las cartas*/}
+      <div className={flipped ? "flipped" : ""}> {/*Si en caso la carta está volteada, entonces se aplica la clase flipped. Si no lo está, entonces se manda un string vacío*/}
+        <img className="frente" src={carta.src} alt="Frente"/> {/*Esta es una imagen dinámica de las cartas que tienen números*/}
+        <img className="trasero"
+        src="/img/atras.png"
+        onClick={handleClick}
+        alt="Trasero"
+        /> {/*Esta es la imagen de la parte trasera de todas las cartas. Tiene diseño de yu gi oh y es la que tiene opción para que se volteen las cartas*/}
+      </div>
+    </div>
   )
 }
-
-//Fila 1
-
-//Método que se encarga del diseño de la primera carta con número 1.
-const N1 = () => {
-  const style = {
-    //Diseño del número.
-    width: `${ELEMENT_SIZE}px`,
-    height: `${ELEMENT_SIZE}px`,
-    position: 'absolute',
-    left: `100px`,
-    top: `50px`
-  }
-  //Retorno de la imagen de la carta.
-  return (
-    <img src='./1.png' style={style} />
-  )
-}
-
-//Método que se encarga del diseño de la segunda carta con número 2.
-const N2 = () => {
-  //Diseño del número.
-  const style = {
-    width: `${ELEMENT_SIZE}px`,
-    height: `${ELEMENT_SIZE}px`,
-    position: 'absolute',
-    left: `400px`,
-    top: `50px`
-  }
-
-  //Retorno de la imagen de la carta.
-  return (
-    <img src='./2.png' style={style} />
-  )
-}
-
-//Método que se encarga del diseño de la segunda carta con número 3.
-const N3 = () => {
-  //Diseño del número.
-  const style = {
-    width: `${ELEMENT_SIZE}px`,
-    height: `${ELEMENT_SIZE}px`,
-    position: 'absolute',
-    left: `700px`,
-    top: `50px`
-  }
-
-  //Retorno de la imagen de la carta.
-  return (
-    <img src='./3.png' style={style} />
-  )
-}
-
-//Método que se encarga del diseño de la segunda carta con número 4.
-const N4 = () => {
-  //Diseño del número.
-  const style = {
-    width: `${ELEMENT_SIZE}px`,
-    height: `${ELEMENT_SIZE}px`,
-    position: 'absolute',
-    left: `1000px`,
-    top: `50px`
-  }
-
-  //Retorno de la imagen de la carta.
-  return (
-    <img src='./4.png' style={style} />
-  )
-}
-
-//Fila 2.
-//Método que se encarga del diseño de la quinta carta con número 5.
-const N5 = () => {
-  //Diseño del número.
-  const style = {
-    width: `${ELEMENT_SIZE}px`,
-    height: `${ELEMENT_SIZE}px`,
-    position: 'absolute',
-    left: `100px`,
-    top: `350px`
-  }
-
-  //Retorno de la imagen de la carta.
-  return (
-    <img src='./5.png' style={style} />
-  )
-}
-
-//Método que se encarga del diseño de la sexta carta con número 1.
-const N6 = () => {
-  //Diseño del número.
-  const style = {
-    width: `${ELEMENT_SIZE}px`,
-    height: `${ELEMENT_SIZE}px`,
-    position: 'absolute',
-    left: `400px`,
-    top: `350px`
-  }
-
-  //Retorno de la imagen de la carta.
-  return (
-    <img src='./1.png' style={style} />
-  )
-}
-
-//Método que se encarga del diseño de la sexta carta con número 5.
-const N7 = () => {
-  //Diseño del número.
-  const style = {
-    width: `${ELEMENT_SIZE}px`,
-    height: `${ELEMENT_SIZE}px`,
-    position: 'absolute',
-    left: `700px`,
-    top: `350px`
-  }
-
-  //Retorno de la imagen de la carta.
-  return (
-    <img src='./5.png' style={style} />
-  )
-}
-
-//Método que se encarga del diseño de la sexta carta con número 3.
-const N8 = () => {
-  //Diseño del número.
-  const style = {
-    width: `${ELEMENT_SIZE}px`,
-    height: `${ELEMENT_SIZE}px`,
-    position: 'absolute',
-    left: `1000px`,
-    top: `350px`
-  }
-
-  //Retorno de la imagen de la carta.
-  return (
-    <img src='./3.png' style={style} />
-  )
-}
-
-//Método que se encarga del diseño de la sexta carta con número 4.
-const N9 = () => {
-  //Diseño del número.
-  const style = {
-    width: `${ELEMENT_SIZE}px`,
-    height: `${ELEMENT_SIZE}px`,
-    position: 'absolute',
-    left: `100px`,
-    top: `650px`
-  }
-
-  //Retorno de la imagen de la carta.
-  return (
-    <img src='./4.png' style={style} />
-  )
-}
-
-//Método que se encarga del diseño de la sexta carta con número 8.
-const N10 = () => {
-  //Diseño del número.
-  const style = {
-    width: `${ELEMENT_SIZE}px`,
-    height: `${ELEMENT_SIZE}px`,
-    position: 'absolute',
-    left: `400px`,
-    top: `650px`
-  }
-
-  //Retorno de la imagen de la carta.
-  return (
-    <img src='./8.png' style={style} />
-  )
-}
-
-//Método que se encarga del diseño de la sexta carta con número 9.
-const N11 = () => {
-  //Diseño del número.
-  const style = {
-    width: `${ELEMENT_SIZE}px`,
-    height: `${ELEMENT_SIZE}px`,
-    position: 'absolute',
-    left: `700px`,
-    top: `650px`
-  }
-
-  //Retorno de la imagen de la carta.
-  return (
-    <img src='./9.png' style={style} />
-  )
-}
-
-//Método que se encarga del diseño de la sexta carta con número 8.
-const N12 = () => {
-  //Diseño del número.
-  const style = {
-    width: `${ELEMENT_SIZE}px`,
-    height: `${ELEMENT_SIZE}px`,
-    position: 'absolute',
-    left: `1000px`,
-    top: `650px`
-  }
-
-  //Retorno de la imagen de la carta.
-  return (
-    <img src='./8.png' style={style} />
-  )
-}
-
-
-//Matriz de la primera fila de cartas.
-const fila1 = [{
-  x: 100,
-  y: 50,
-}, {
-  x: 400,
-  y: 50,
-}, {
-  x: 700,
-  y: 50,
-}, {
-  x: 1000,
-  y: 50,
-}]
-
-//Matriz de la segunda fila de cartas.
-const fila2 = [{
-  x: 100,
-  y: 350,
-}, {
-  x: 400,
-  y: 350,
-}, {
-  x: 700,
-  y: 350,
-}, {
-x: 1000,
-y: 350,
-}]
-
-//Matriz de la tercera fila de cartas.
-const fila3 =[{
-  x: 100,
-  y: 650,
-}, {
-  x: 400,
-  y: 650,
-}, {
-  x: 700,
-  y: 650,
-}, {
-x: 1000,
-y: 650,
-}]
-
-
-
 
 //Método app. Este el método principal.
 const App = () => {
 
-  const [cards, setCards] = React.useState(fila1) //Matriz de la primera fila de cartas.
-  const [cards2, setCards2] = React.useState(fila2) //Matriz de la segunda fila de cartas.
-  const [cards3, setCards3] = React.useState(fila3) //Matriz de la tercera fila de cartas.
+  const [mezclas, setMezclas] = React.useState([]) //Se guarda el estado de las cartas.
+    //Términos para que el usuario pueda tomar turnos en el juego.
+    const [turno, setTurno] = React.useState(0)
 
-  const hola = (e) => {
-    if(e.key === 'ArrowRight'){
-      setCards((oldPos) => ((oldPos + 10) % (SCREEN_SIZE - ELEMENT_SIZE)))
+    //Creando estado para la elección de las cartas.
+    const[eleccionUno, setEleccionUno] = React.useState(null) //Estado para la elección de la carta 1.
+    const[eleccionDos, setEleccionDos] = React.useState(null) //Estado para la elección de la carta 2.
+
+    //Creando estado deshabilitado en las cartas.
+    const[deshabilitado, setDeshabilitado] = React.useState(false)
+
+    //console.log(mezclas, turno) //Imprimiendo la matriz de las cartas y el turno de la persona.
+
+    //Función para la elección.
+    const hEleccion = (carta) => {
+        //console.log(carta)
+        //Si la variable está null es porque no se ha elegido nada. Si no está null, es porque ya se escogió una carta.
+        //Si la variable eleccionUno está null, entonces pasa a setEleccionUno(carta). Si no está null, entonces pasa a setEleccionDos(carta).
+        eleccionUno ? setEleccionDos(carta) : setEleccionUno(carta)
+        //No es recomendable comparar más cosas en este método.
     }
-  }
+
+    //Comparando las dos elecciones.
+    //A este método se le pasa una segunda dependencia.
+  React.useEffect(() => {
+      //Se evalúa si eleccionUno y eleccionDos tienen un valor.
+      if(eleccionUno && eleccionDos){
+
+        setDeshabilitado(true) //Esto hace que las demás cartas se deshabiliten cuando haya un match entre dos cartas elegidas anteriormente.
+
+        //Si el source de la elección 1 es igual al source de la elección 2, entonces se dice que hay un match.
+        if(eleccionUno.src === eleccionDos.src){
+          //Se va a actualizar lo siguiente: const [mezclas, setMezclas] = useState([])
+          //Si el source de la elección uno es exactamente igual al source de la elección dos entonces:
+          setMezclas(prevMezclas => { //Se actualiza el estado de la carta anterior
+            return prevMezclas.map(carta => { //Se retorna un nuevo array de cartas basado en el estado anterior de las cartas.
+              //Función que recorre a c/u de las cartas.
+              if (carta.src === eleccionUno.src){ //Si en caso el estado de la carta es igual al estado de la carta seleccionada, entonces pasa lo siguiente: se retorna el estado de la carta en true.
+                return {...carta, matched: true} //Retornando el estado de la carta que hizo match en true.
+              }else{
+                return carta //Si en caso las cartas no son iguales, entonces se retorna el estado de la carta sin cambiar.
+              }
+            })
+          })
+          formTurno() //Se llama para limpiar las dos elecciones y para incrementar el turno.
+        }else {
+          console.log("No hay match")
+          setTimeout(() => formTurno(), 5000) //Se llama para limpiar las dos elecciones y para incrementar el turno. Tiene un delay de gracia.
+        }
+      }
+    }, [eleccionUno, eleccionDos]) //Cuando se seleccione la carta 1, entonces se buscará esta función y cuando se seleccione la carta 2, entonces se busca este método otra vez.
+
+
+    console.log(mezclas) //Imprimiendo la matriz de mezclas.
+
+    //Este método formatea las elecciones e incrementa el turno.
+    const formTurno = () => {
+      setEleccionUno(null) //Formateando la elección 1.
+      setEleccionDos(null) //Formateando la elección 2.
+      setTurno(prevTurno => prevTurno + 1) //Incrementando el turno de elección.
+      setDeshabilitado(false) //Cuando ya se hizo la comparación entre las cartas, ya se deshabilita el bloqueo establecido.
+    }
+
+    //Empezando el juego de manera automática
+    React.useEffect(() => {
+      mezcla() //Llamando al método que mezcla todas las cartas.
+    },[])
+
+    //Mezclar las cartas.
+    const mezcla = () => {
+        //Agarrar las cartas, mezclarlas y duplicarlas.
+        const mezcla = [...cartas, ...cartas] //Ya se duplicaron las cartas.
+            .sort(() => Math.random() - 0.5) //Busca una función para cada elemento del array.
+            //Si regresa un número menor a cero, entonces las cartas se mantienen igual. Si en caso se regresa un número mayor a cero, entonces se cartas se mezcla.
+            .map((carta) => ({...carta, id: Math.random() })) //Se mapean las cartas, se le pone un id a cada carta y luego se colocan en el grid.
+        //Inicializando las elecciones en null por si tuvieran algo almacenado de algún intento anterior.
+        setEleccionUno(null)
+        setEleccionDos(null)
+        setMezclas(mezcla) //Se actualiza el estado de las cartas.
+        setTurno(0)
+    }
 
   //Estilo de la app.
   const style = {
@@ -317,25 +136,24 @@ const App = () => {
     position: 'relative'
 }
 
-  //Se están mapenado las tres filas de las cartas.
   return (
-    <div style = { style }>
-     {cards.map((card) => <Card key={`${card.x}-${card.y}`} {...card} />)}
-     {cards2.map((car) => <Card key={`${car.x}-${car.y}`} {...car} />)}
-     {cards3.map((ca) => <Card key={`${ca.x}-${ca.y}`} {...ca} />)}
-     <N1/>
-     <N2/>
-     <N3/>
-     <N4/>
-     <N5/>
-     <N6/>
-     <N7/>
-     <N8/>
-     <N9/>
-     <N10/>
-     <N11/>
-     <N12/>
-     <p>Hola</p>
+    <div style = { style } className="App">
+        <h1> Juego de Memoria(Lab6) < /h1> {/*Dándole título a la página*/}
+        <button onClick = { mezcla } > Nuevo juego </button> {/*Botón para mezclar cartas*/}
+        <div className = "grilla" > { /*Esta es la grilla de las cartas*/ }
+        {mezclas.map(carta => (
+          <Cartas
+          key={carta.id}
+          carta={carta}
+          hEleccion = {hEleccion}
+          flipped = {carta === eleccionUno || carta === eleccionDos || carta.matched}
+          deshabilitados={deshabilitado}
+          />
+        ))} {/*Mandando el id de la carta a la clase Cartas. Enviando el source de las cartas a la clase de Cartas. Enviando el evento de click a la clase de Cartas*/}
+            {/*Hay tres escenarios: 1. Si se seleccionó la carta uno 2. Si se seleccionó la carta dos y 3. Si las cartas hacen match*/}
+            {/*También se pasa el estado deshabilitado. Esto ocurre cuando hay un match entre dos cartas, entonces se bloquean las demás cartas. Si no, se habilita escoger cualquier otra carta*/}
+        </div>
+        <p>Movimientos: {turno} </p>
     </div>
   )
 }
