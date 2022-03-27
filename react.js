@@ -31,20 +31,21 @@ function Cartas({carta, hEleccion, flipped, deshabilitados}){
 
   //Estilo de las cartas.
   const style1 = {
-    transform: 'rotateY(90deg)',
-    position: 'relative'
+    transform: 'rotateY(0deg)'
+
   }
 
+  //Estilo de la carta trasera.
   const style2 = {
-    transform: 'rotateY(0deg)',
-    position: 'relative'
+    position: 'absolute',
+    transform: 'rotateY(90deg)'
   }
 
   return(
     <div  className="carta"> {/*Daándole un id a las cartas*/}
       <div className={flipped ? "flipped" : ""}> {/*Si en caso la carta está volteada, entonces se aplica la clase flipped. Si no lo está, entonces se manda un string vacío*/}
-        <img style={style1} className="frente" src={carta.src} alt="Frente"/> {/*Esta es una imagen dinámica de las cartas que tienen números*/}
-        <img style={style2}
+        <img style={style2} className="frente" src={carta.src} alt="Frente"/> {/*Esta es una imagen dinámica de las cartas que tienen números*/}
+        <img style={style1}
         className="trasero"
         src="./atras.png"
         onClick={handleClick}
