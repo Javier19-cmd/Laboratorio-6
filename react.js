@@ -26,13 +26,25 @@ function Cartas({carta, hEleccion, flipped, deshabilitados}){
        //Si en caso no se ha deshabilitado ninguna carta, entonces se puede hacer una elección en el tablero.
         hEleccion(carta) //Pasando la elección desde la App.
     }
+
+  }
+
+  //Estilo de las cartas.
+  const style1 = {
+    transform: 'rotateY(90deg)',
+    position: 'relative'
+  }
+
+  const style2 = {
+    transform: 'rotateY(0deg)'
   }
 
   return(
     <div  className="carta"> {/*Daándole un id a las cartas*/}
       <div className={flipped ? "flipped" : ""}> {/*Si en caso la carta está volteada, entonces se aplica la clase flipped. Si no lo está, entonces se manda un string vacío*/}
-        <img className="frente" src={carta.src} alt="Frente"/> {/*Esta es una imagen dinámica de las cartas que tienen números*/}
-        <img className="trasero"
+        <img style={style1} className="frente" src={carta.src} alt="Frente"/> {/*Esta es una imagen dinámica de las cartas que tienen números*/}
+        <img style={style2}
+        className="trasero"
         src="./atras.png"
         onClick={handleClick}
         alt="Trasero"
@@ -150,14 +162,14 @@ const App = () => {
         <h1> Juego de Memoria < /h1> {/*Dándole título a la página*/}
         <button onClick = { mezcla } > Nuevo juego </button> {/*Botón para mezclar cartas*/}
         <div style={style2} className = "grilla" > { /*Esta es la grilla de las cartas*/ }
-          {mezclas.map(carta => (
-            <Cartas
-            key={carta.id}
-            carta={carta}
-            hEleccion = {hEleccion}
-            flipped = {carta === eleccionUno || carta === eleccionDos || carta.matched}
-            deshabilitados={deshabilitado}
-            />
+        {mezclas.map(carta => (
+          <Cartas
+          key={carta.id}
+          carta={carta}
+          hEleccion = {hEleccion}
+          flipped = {carta === eleccionUno || carta === eleccionDos || carta.matched}
+          deshabilitados={deshabilitado}
+          />
         ))} {/*Mandando el id de la carta a la clase Cartas. Enviando el source de las cartas a la clase de Cartas. Enviando el evento de click a la clase de Cartas*/}
             {/*Hay tres escenarios: 1. Si se seleccionó la carta uno 2. Si se seleccionó la carta dos y 3. Si las cartas hacen match*/}
             {/*También se pasa el estado deshabilitado. Esto ocurre cuando hay un match entre dos cartas, entonces se bloquean las demás cartas. Si no, se habilita escoger cualquier otra carta*/}
