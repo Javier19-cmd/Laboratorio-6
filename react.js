@@ -36,7 +36,8 @@ function Cartas({carta, hEleccion, flipped, deshabilitados}){
   }
 
   const style2 = {
-    transform: 'rotateY(0deg)'
+    transform: 'rotateY(0deg)',
+    position: 'relative'
   }
 
   return(
