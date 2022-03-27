@@ -31,22 +31,29 @@ function Cartas({carta, hEleccion, flipped, deshabilitados}){
 
   //Estilo de las cartas.
   const style1 = {
-    transform: 'rotateY(0deg)'
+    transform: 'rotateY(0deg)',
+    display: 'block',
+    width: '50%'
 
   }
 
   //Estilo de la carta trasera.
   const style2 = {
-    position: 'absolute',
-    transform: 'rotateY(90deg)'
+    transform: 'rotateY(90deg)',
+    position: 'absolute'
+  }
+
+  //Animación del flip.
+  const style3 = {
+    position: 'relative'
   }
 
   return(
-    <div  className="carta"> {/*Daándole un id a las cartas*/}
+    <div style={style3} className="carta"> {/*Daándole un id a las cartas*/}
       <div className={flipped ? "flipped" : ""}> {/*Si en caso la carta está volteada, entonces se aplica la clase flipped. Si no lo está, entonces se manda un string vacío*/}
-        <img style={style2} className="frente" src={carta.src} alt="Frente"/> {/*Esta es una imagen dinámica de las cartas que tienen números*/}
-        <img style={style1}
-        className="trasero"
+        <img className="frente" style={style2} src={carta.src} alt="Frente"/> {/*Esta es una imagen dinámica de las cartas que tienen números*/}
+        <img className="trasero"
+        style={style1}
         src="./atras.png"
         onClick={handleClick}
         alt="Trasero"
@@ -151,12 +158,10 @@ const App = () => {
 }
   //Estilo de las cartas
   const style2 = {
-    width: '100%',
-    position: 'relative',
     display: 'grid',
     gridTemplateColumns: '1fr 1fr 1fr 1fr',
-    marginTop: '60px',
-    gridGap: '30px'
+    marginTop: '40px',
+    gridGap: '20px'
   }
 
   return (
