@@ -1,6 +1,6 @@
 //Grid del juego.
 const SCREEN_SIZE = 1865;
-const SCREEN_HEIGHT = 1865;
+const SCREEN_HEIGHT = 2000;
 const ELEMENT_SIZE = 200;
 
 //Cartas que se usarán para la memoria.
@@ -26,7 +26,6 @@ function Cartas({carta, hEleccion, flipped, deshabilitados}){
        //Si en caso no se ha deshabilitado ninguna carta, entonces se puede hacer una elección en el tablero.
         hEleccion(carta) //Pasando la elección desde la App.
     }
-
   }
 
   return(
@@ -151,14 +150,14 @@ const App = () => {
         <h1> Juego de Memoria < /h1> {/*Dándole título a la página*/}
         <button onClick = { mezcla } > Nuevo juego </button> {/*Botón para mezclar cartas*/}
         <div style={style2} className = "grilla" > { /*Esta es la grilla de las cartas*/ }
-        {mezclas.map(carta => (
-          <Cartas
-          key={carta.id}
-          carta={carta}
-          hEleccion = {hEleccion}
-          flipped = {carta === eleccionUno || carta === eleccionDos || carta.matched}
-          deshabilitados={deshabilitado}
-          />
+          {mezclas.map(carta => (
+            <Cartas
+            key={carta.id}
+            carta={carta}
+            hEleccion = {hEleccion}
+            flipped = {carta === eleccionUno || carta === eleccionDos || carta.matched}
+            deshabilitados={deshabilitado}
+            />
         ))} {/*Mandando el id de la carta a la clase Cartas. Enviando el source de las cartas a la clase de Cartas. Enviando el evento de click a la clase de Cartas*/}
             {/*Hay tres escenarios: 1. Si se seleccionó la carta uno 2. Si se seleccionó la carta dos y 3. Si las cartas hacen match*/}
             {/*También se pasa el estado deshabilitado. Esto ocurre cuando hay un match entre dos cartas, entonces se bloquean las demás cartas. Si no, se habilita escoger cualquier otra carta*/}
