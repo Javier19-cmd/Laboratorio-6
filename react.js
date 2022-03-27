@@ -6,13 +6,19 @@ const ELEMENT_SIZE = 200;
 //Cartas que se usarán para la memoria.
 //Las cartas empiezan teniendo el match en false para hacer bien la comparación.
 const cartas = [
-    { "Laboratorio-6": "./1.png", matched: false },
-    { "Laboratorio-6": "./2.png", matched: false },
-    { "Laboratorio-6": "./3.png", matched: false }
-
+    { "src": "./1.png", matched: false },
+    { "src": "./2.png", matched: false },
+    { "src": "./3.png", matched: false },
+    { "src": "./4.png", matched: false },
+    { "src": "./5.png", matched: false },
+    { "src": "./6.png", matched: false },
+    { "src": "./7.png", matched: false },
+    { "src": "./8.png", matched: false },
+    { "src": "./9.png", matched: false },
+    { "src": "./10.png", matched: false }
 ]
 
-
+//Interacción con las cartas
 function Cartas({carta, hEleccion, flipped, deshabilitados}){
   const handleClick = () => {
     //Aquí se actualizarán ciertos estados de las cartas.
