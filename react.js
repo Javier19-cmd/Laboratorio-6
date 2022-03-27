@@ -8,6 +8,7 @@ Referencias:
 */
 
 //Cartas que se usarán para la memoria.
+//Se hizo en forma de matriz para facilitar su acceso.
 //Las cartas empiezan teniendo el match en false para hacer bien la comparación.
 const cartas = [
     { "src": "./1.png", matched: false },

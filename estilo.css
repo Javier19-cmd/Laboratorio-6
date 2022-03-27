@@ -9,25 +9,26 @@ Referencias:
 3. Texto: https://www.youtube.com/watch?v=Ym_7u7zKpXs&ab_channel=NeuroAcademySRL
 4. Propiedades de un texto: https://www.youtube.com/watch?v=2Q_1OVrCTq8&ab_channel=VidaMRR-Diseñoydesarrolloweb
 5. Ubicación del botón: https://www.mejorcodigo.com/p/20607.html
+6. Color del texto: https://www.w3schools.com/colors/colors_picker.asp
 */
 
 /*Estilo de la página*/
 .App{
-  width: 1850px;
-  height: 2150px;
+  width: 1850px; /*Ancho de la pantalla*/
+  height: 2150px; /*Alto de la pantalla*/
   background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); /*Gradiente para el fondo de la página*/
   position: relative; /*Posición relativa*/
   display: grid;    /*Se pone el grid para que se puedan poner bien las imágenes*/
-  align-content: center;
-  justify-content: center;
+  align-content: center;  /*Centrando el contenido*/
+  justify-content: center; /*Justificando el contenido*/
 }
 
 /*Estilo de la grilla*/
 .grilla{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin-top: 40px;
-  grid-gap: 20px;
+  display: grid; /*Forma de grilla para que se vea como tablero de cartas*/
+  grid-template-columns: 1fr 1fr 1fr 1fr; /*Agregando template de columnas*/
+  margin-top: 40px; /*Agregando un margen de espacio a la grilla con respecto al objeto de arriba*/
+  grid-gap: 20px;  /*Agregando un margen de espacio entre sí a las columnas*/
 }
 
 /*Propiedades del botón*/
