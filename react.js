@@ -1,8 +1,3 @@
-//Grid del juego.
-const SCREEN_SIZE = 1865;
-const SCREEN_HEIGHT = 2000;
-const ELEMENT_SIZE = 200;
-
 //Cartas que se usarán para la memoria.
 //Las cartas empiezan teniendo el match en false para hacer bien la comparación.
 const cartas = [
@@ -29,31 +24,11 @@ function Cartas({carta, hEleccion, flipped, deshabilitados}){
 
   }
 
-  //Estilo de las cartas.
-  const style1 = {
-    transform: 'rotateY(0deg)',
-    display: 'block',
-    width: '50%'
-
-  }
-
-  //Estilo de la carta trasera.
-  const style2 = {
-    transform: 'rotateY(90deg)',
-    position: 'absolute'
-  }
-
-  //Animación del flip.
-  const style3 = {
-    position: 'relative'
-  }
-
   return(
-    <div style={style3} className="carta"> {/*Daándole un id a las cartas*/}
+    <div className="carta"> {/*Daándole un id a las cartas*/}
       <div className={flipped ? "flipped" : ""}> {/*Si en caso la carta está volteada, entonces se aplica la clase flipped. Si no lo está, entonces se manda un string vacío*/}
-        <img className="frente" style={style2} src={carta.src} alt="Frente"/> {/*Esta es una imagen dinámica de las cartas que tienen números*/}
+        <img className="frente" src={carta.src} alt="Frente"/> {/*Esta es una imagen dinámica de las cartas que tienen números*/}
         <img className="trasero"
-        style={style1}
         src="./atras.png"
         onClick={handleClick}
         alt="Trasero"
@@ -148,27 +123,11 @@ const App = () => {
         setTurno(0)
     }
 
-  //Estilo de la app. Puntualmente del cuerpo de la App.
-  const style = {
-    width: `${SCREEN_SIZE}px`,
-    height: `${SCREEN_HEIGHT}px`,
-    background: 'linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)',
-    position: 'relative',
-    display: 'grid'
-}
-  //Estilo de las cartas
-  const style2 = {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr 1fr 1fr',
-    marginTop: '40px',
-    gridGap: '20px'
-  }
-
   return (
-    <div style = { style } className="App">
+    <div className="App">
         <h1> Juego de Memoria < /h1> {/*Dándole título a la página*/}
         <button onClick = { mezcla } > Nuevo juego </button> {/*Botón para mezclar cartas*/}
-        <div style={style2} className = "grilla" > { /*Esta es la grilla de las cartas*/ }
+        <div className = "grilla" > { /*Esta es la grilla de las cartas*/ }
         {mezclas.map(carta => (
           <Cartas
           key={carta.id}
