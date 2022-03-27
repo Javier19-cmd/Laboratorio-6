@@ -1,3 +1,12 @@
+/*
+Nombre: Javier Sebastián Valle Balsells
+Carnet: 20159
+Sección: 10
+
+Referencias:
+1. https://www.youtube.com/watch?v=ZCKohZwGZMw&list=PL4cUxeGkcC9iQ7g2eoNXHCJBBBz40S_Lm
+*/
+
 //Cartas que se usarán para la memoria.
 //Las cartas empiezan teniendo el match en false para hacer bien la comparación.
 const cartas = [
@@ -126,7 +135,8 @@ const App = () => {
   return (
     <div className="App">
         <h1> Juego de Memoria < /h1> {/*Dándole título a la página*/}
-        <button onClick = { mezcla } > Nuevo juego </button> {/*Botón para mezclar cartas*/}
+        <button onClick = { mezcla }> Nuevo juego </button> {/*Botón para mezclar cartas*/}
+        <p>Movimientos: {turno} </p> {/*Imprimiendo el turno de la persona*/}
         <div className = "grilla" > { /*Esta es la grilla de las cartas*/ }
         {mezclas.map(carta => (
           <Cartas
@@ -140,7 +150,6 @@ const App = () => {
             {/*Hay tres escenarios: 1. Si se seleccionó la carta uno 2. Si se seleccionó la carta dos y 3. Si las cartas hacen match*/}
             {/*También se pasa el estado deshabilitado. Esto ocurre cuando hay un match entre dos cartas, entonces se bloquean las demás cartas. Si no, se habilita escoger cualquier otra carta*/}
         </div>
-        <p>Movimientos: {turno} </p>
     </div>
   )
 }

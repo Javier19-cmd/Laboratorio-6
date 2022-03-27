@@ -4,16 +4,22 @@ Carnet: 20159
 Sección: 10
 
 Referencias:
-1. https://www.youtube.com/watch?v=ZCKohZwGZMw&list=PL4cUxeGkcC9iQ7g2eoNXHCJBBBz40S_Lm
+1. Juego de la memoria: https://www.youtube.com/watch?v=ZCKohZwGZMw&list=PL4cUxeGkcC9iQ7g2eoNXHCJBBBz40S_Lm
+2. Botón: https://www.youtube.com/watch?v=Lz7PnlnHLxk&ab_channel=TheCode
+3. Texto: https://www.youtube.com/watch?v=Ym_7u7zKpXs&ab_channel=NeuroAcademySRL
+4. Propiedades de un texto: https://www.youtube.com/watch?v=2Q_1OVrCTq8&ab_channel=VidaMRR-Diseñoydesarrolloweb
+5. Ubicación del botón: https://www.mejorcodigo.com/p/20607.html
 */
 
 /*Estilo de la página*/
 .App{
   width: 1865px;
-  height: 2000px;
-  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-  position: relative;
-  display: grid;
+  height: 2150px;
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); /*Gradiente para el fondo de la página*/
+  position: relative; /*Posición relativa*/
+  display: grid;    /*Se pone el grid para que se puedan poner bien las imágenes*/
+  align-content: center;
+  justify-content: center;
 }
 
 /*Estilo de la grilla*/
@@ -24,6 +30,25 @@ Referencias:
   grid-gap: 20px;
 }
 
+/*Propiedades del botón*/
+button{
+  border: 3px solid rgba(100,100,100,0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 300px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #FFF;
+  background-size: 300%;
+  transition: 0.6s;
+  background-image: linear-gradient(to left, #00B7DA, #161569, #00B7DA);
+  left: 780px;
+  top: 150px;
+  position: absolute;
+}
+
 /*Propiedades de la carta individual*/
 .carta{
   position: relative; /*Posición relativa, para que se puedan aplicar todas las propiedades como debe ser*/
@@ -32,10 +57,21 @@ Referencias:
 /*Propiedades de la imagen*/
 /*Cambiar después*/
 .carta img{
-  width: 50%; /*Ancho del 100% en la carta*/
+  width: 100%; /*Ancho del 100% en la carta*/
   display: block; /*Se hace el display en bloque para mayor comoidad*/
   border: 4px black; /*Se aplica un borde de dos pixeles para que quede mejor en vista.*/
   border-radius: 8px;     /*Se le aplica un poco de esquinas redondas a las cartas*/
+}
+
+/*Propiedades del párrafo*/
+p{
+  text-align: justify;
+  text-transform: none;
+  text-indent: 350px;
+  font-size: 35px;
+  right: 50px;
+  top: 25px;
+  position: fixed;
 }
 
 /*Propiedades para el frente de las cartas: La parte de los números*/
