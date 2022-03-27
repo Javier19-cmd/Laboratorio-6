@@ -13,7 +13,7 @@ Referencias:
 
 /*Estilo de la página*/
 .App{
-  width: 1865px;
+  width: 1850px;
   height: 2150px;
   background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); /*Gradiente para el fondo de la página*/
   position: relative; /*Posición relativa*/
@@ -32,21 +32,33 @@ Referencias:
 
 /*Propiedades del botón*/
 button{
-  border: 3px solid rgba(100,100,100,0.1);
-  margin-bottom: 20px;
-  padding: 20px;
-  width: 300px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  color: #FFF;
-  background-size: 300%;
-  transition: 0.6s;
-  background-image: linear-gradient(to left, #00B7DA, #161569, #00B7DA);
-  left: 780px;
-  top: 150px;
-  position: absolute;
+  border: 3px solid rgba(100,100,100,0.1); /*Borde de 3px con color azulado*/
+  margin-bottom: 20px; /*Margen de 20px*/
+  padding: 20px;      /*Tamaño del botón*/
+  width: 300px;       /*Ancho del botón*/
+  font-family: 'Poppins', sans-serif; /*Fuente que se usará en el botón*/
+  font-size: 16px;  /*Tamaño de la fuente*/
+  border-radius: 8px; /*Bordes redondeados*/
+  cursor: pointer;   /*Esto hace que el cursor enseñe la mano para seleccionar*/
+  color: #FFF;      /*Color blanco para el texto*/
+  background-size: 300%; /*Tamaño de la parte trasera*/
+  transition: 0.6s;     /*Transición del efecto*/
+  background-image: linear-gradient(to left, #00B7DA, #161569, #00B7DA); /*Color de fondo: Se hizo con un gradiente*/
+  left: 780px; /*Ubicación del botón desde la izquierda*/
+  top: 150px;  /*Ubicación del botón desde arriba*/
+  position: absolute; /*Posición absoluta para que el botón no se mueva*/
+}
+
+/*Propiedades del título*/
+h1{
+  text-align: justify; /*Justifiando el texto*/
+  text-transform: none; /*Quitando las transformaciones del texto*/
+  text-indent: 350px; /*Centrando el texto*/
+  font-size: 35px;    /*Tamaño de la fuente*/
+  left: 435px;       /*Ubicación del texto desde la izquierda hacia la derecha*/
+  top: 25px;         /*Ubicación del texto desde arriba hacia abajo*/
+  position: absolute; /*Posición absoluta para que no se mueva el texto*/
+  color: #003399;   /*Color del texto*/
 }
 
 /*Propiedades de la carta individual*/
@@ -65,13 +77,13 @@ button{
 
 /*Propiedades del párrafo*/
 p{
-  text-align: justify;
-  text-transform: none;
-  text-indent: 350px;
-  font-size: 35px;
-  right: 50px;
-  top: 25px;
-  position: fixed;
+  text-align: justify; /*Justificando el texto*/
+  text-transform: none; /*Quitándole las tranformaciones al texto*/
+  font-size: 35px;  /*Tamaño del texto*/
+  right: 50px;      /*Ubicación del texto desde la derecha*/
+  top: 25px;       /*Ubicación del texto desde arriba*/
+  position: fixed; /*Posición fixed para que el marcador pueda seguir al usuario cuando baje el scroll*/
+  color: #003399;   /*Color del texto*/
 }
 
 /*Propiedades para el frente de las cartas: La parte de los números*/

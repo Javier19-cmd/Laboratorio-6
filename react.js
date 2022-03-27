@@ -135,7 +135,7 @@ const App = () => {
   return (
     <div className="App">
         <h1> Juego de Memoria < /h1> {/*Dándole título a la página*/}
-        <button onClick = { mezcla }> Nuevo juego </button> {/*Botón para mezclar cartas*/}
+        <button onClick = { mezcla }> Mezclar las cartas </button> {/*Botón para mezclar cartas*/}
         <p>Movimientos: {turno} </p> {/*Imprimiendo el turno de la persona*/}
         <div className = "grilla" > { /*Esta es la grilla de las cartas*/ }
         {mezclas.map(carta => (
