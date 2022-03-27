@@ -30,7 +30,7 @@ function Cartas({carta, hEleccion, flipped, deshabilitados}){
   }
 
   return(
-    <div className="carta"> {/*Daándole un id a las cartas*/}
+    <div  className="carta"> {/*Daándole un id a las cartas*/}
       <div className={flipped ? "flipped" : ""}> {/*Si en caso la carta está volteada, entonces se aplica la clase flipped. Si no lo está, entonces se manda un string vacío*/}
         <img className="frente" src={carta.src} alt="Frente"/> {/*Esta es una imagen dinámica de las cartas que tienen números*/}
         <img className="trasero"
@@ -128,19 +128,29 @@ const App = () => {
         setTurno(0)
     }
 
-  //Estilo de la app.
+  //Estilo de la app. Puntualmente del cuerpo de la App.
   const style = {
     width: `${SCREEN_SIZE}px`,
     height: `${SCREEN_HEIGHT}px`,
     background: 'linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)',
-    position: 'relative'
+    position: 'relative',
+    display: 'grid'
 }
+  //Estilo de las cartas
+  const style2 = {
+    width: '100%',
+    position: 'relative',
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr 1fr 1fr',
+    marginTop: '60px',
+    gridGap: '30px'
+  }
 
   return (
     <div style = { style } className="App">
-        <h1> Juego de Memoria(Lab6) < /h1> {/*Dándole título a la página*/}
+        <h1> Juego de Memoria < /h1> {/*Dándole título a la página*/}
         <button onClick = { mezcla } > Nuevo juego </button> {/*Botón para mezclar cartas*/}
-        <div className = "grilla" > { /*Esta es la grilla de las cartas*/ }
+        <div style={style2} className = "grilla" > { /*Esta es la grilla de las cartas*/ }
         {mezclas.map(carta => (
           <Cartas
           key={carta.id}
