@@ -97,14 +97,14 @@ const App = () => {
           })
           formTurno() //Se llama para limpiar las dos elecciones y para incrementar el turno.
         }else {
-          console.log("No hay match")
+          alert("Las cartas no son iguales...prueba otro tipo de pareja") //Notifiando que no hay coincidencias.
           setTimeout(() => formTurno(), 5000) //Se llama para limpiar las dos elecciones y para incrementar el turno. Tiene un delay de gracia.
         }
       }
     }, [eleccionUno, eleccionDos]) //Cuando se seleccione la carta 1, entonces se buscará esta función y cuando se seleccione la carta 2, entonces se busca este método otra vez.
 
 
-    console.log(mezclas) //Imprimiendo la matriz de mezclas.
+    //console.log(mezclas) //Imprimiendo la matriz de mezclas.
 
     //Este método formatea las elecciones e incrementa el turno.
     const formTurno = () => {
